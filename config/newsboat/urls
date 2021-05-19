@@ -1,0 +1,17 @@
+#The channel ID prefix URL for RSS:
+#https://www.youtube.com/feeds/videos.xml?channel_id=
+
+#The username prefix URL for RSS:
+#https://www.youtube.com/feeds/videos.xml?user=
+
+#The playlist prefix URL for RSS:
+#https://www.youtube.com/feeds/videos.xml?playlist_id=
+
+https://lukesmith.xyz/rss.xml
+https://www.youtube.com/feeds/videos.xml?user=MentalOutlawStudios
+https://www.youtube.com/feeds/videos.xml?user=OmegaDungeon
+https://www.youtube.com/feeds/videos.xml?user=PewDiePie
+https://www.youtube.com/feeds/videos.xml?user=CinnamonToastKen
+https://www.youtube.com/feeds/videos.xml?channel_id=UCwLxgZHR8oDOzJXtXuSB_bA
+
+
