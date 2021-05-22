@@ -1,11 +1,22 @@
 let mapleader=" "
 
+" Plugin configuration
+call plug#begin('~/.vim/plugged')
+Plug 'vimwiki/vimwiki'
+Plug 'sheerun/vim-polyglot'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'mattn/emmet-vim'
+call plug#end()
+
 " Basic settings
 set bg=dark
 set go=a
 set mouse=a
 set nohlsearch
 set clipboard=unnamedplus
+set autoindent
 set nocompatible
 set encoding=utf-8
 set number relativenumber
@@ -81,16 +92,6 @@ tnoremap <Esc> <C-\><C-n>
 " Save file as sudo when no sudo permissions
 cmap w!! w !sudo tee > /dev/null %
 
-" Plugin configuration
-call plug#begin('~/.vim/plugged')
-Plug 'vimwiki/vimwiki'
-Plug 'sheerun/vim-polyglot'
-Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
-Plug 'mattn/emmet-vim'
-call plug#end()
-
 " Colorscheme from morhetz:
 colorscheme gruvbox
 
@@ -102,6 +103,3 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " Vimwiki settings:
 let g:vimwiki_list = [{'path': '~/documents/vimwiki'}]
-
-
-
