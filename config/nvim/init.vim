@@ -1,27 +1,27 @@
 let mapleader=" "
 
 " Plugin configuration
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plug')
 Plug 'vimwiki/vimwiki'
 Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
 Plug 'mattn/emmet-vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " Basic settings
-set bg=dark
+set bg=light
 set go=a
 set mouse=a
 set nohlsearch
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set autoindent
 set nocompatible
 set encoding=utf-8
 set number relativenumber
 set noswapfile
 set autochdir
+set laststatus=0
 set fileformat=unix
 
 " Syntax settings
@@ -29,7 +29,7 @@ syntax on
 filetype plugin on
 
 " Auto Center
-autocmd InsertEnter * norm zz
+"autocmd InsertEnter * norm zz
 
 " Tab settings
 set tabstop=4
@@ -92,8 +92,8 @@ tnoremap <Esc> <C-\><C-n>
 " Save file as sudo when no sudo permissions
 cmap w!! w !sudo tee > /dev/null %
 
-" Colorscheme from morhetz:
-colorscheme gruvbox
+" Colorscheme for nord:
+colorscheme nord
 
 " Vimnerdtree from preservim settings:
 nnoremap <leader>n :NERDTreeFocus<CR>
