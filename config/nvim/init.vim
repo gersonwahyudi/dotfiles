@@ -44,7 +44,7 @@ set splitbelow splitright
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Basic file system cmd
-nnoremap <C-o> :!touch<Space>
+nnoremap <C-t> :!touch<Space>
 nnoremap <C-d> :!mkdir<Space>
 nnoremap <C-m> :!mv<Space>%<Space>
 
