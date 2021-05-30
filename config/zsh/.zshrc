@@ -2,12 +2,12 @@
 
 # Enable colors and change prompt:
 autoload -U colors  && colors
-PS1="%B%{$fg[#ebdbb2]%}[%{$fg[#ebdbb2]%}%n%{$fg[#ebdbb2]%}@%{$fg[#ebdbb2]%}%M %{$fg[#ebdbb2]%}%~%{$fg[#ebdbb2]%}]%{$reset_color%}$%b "
+PS1="%B%{$fg[white]%}[%{$fg[white]%}%n%{$fg[white]%}@%{$fg[white]%}%M %{$fg[white]%}%~%{$fg[white]%}]%{$reset_color%}$%b "
 
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.local/.cache/.histfile
+HISTFILE=~/.local/cache/.histfile
 
 # Basic auto/tab complete:
 setopt auto_cd
@@ -65,6 +65,6 @@ alias \
 bindkey '^ ' autosuggest-accept
 
 # Load syntax and auto-suggestion; should be last.
-# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
