@@ -2,26 +2,28 @@ let mapleader=" "
 
 " Plugin configuration
 call plug#begin('~/.config/nvim/plug')
+Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'sheerun/vim-polyglot'
-Plug 'preservim/nerdtree'
-Plug 'mattn/emmet-vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " Basic settings
-set bg=light
+set showtabline=2
+set title
 set go=a
 set mouse=a
 set nohlsearch
-set clipboard+=unnamedplus
-set autoindent
+set clipboard=unnamedplus
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
 set nocompatible
 set encoding=utf-8
 set number relativenumber
-set noswapfile
 set autochdir
-set laststatus=0
 set fileformat=unix
 
 " Syntax settings
@@ -29,7 +31,7 @@ syntax on
 filetype plugin on
 
 " Auto Center
-"autocmd InsertEnter * norm zz
+autocmd InsertEnter * norm zz
 
 " Tab settings
 set tabstop=4
@@ -43,63 +45,50 @@ set splitbelow splitright
 " Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" SHORTCUTS :
 " Basic file system cmd
 nnoremap <C-o> :!touch<Space>
 nnoremap <C-d> :!mkdir<Space>
 nnoremap <C-m> :!mv<Space>%<Space>
-
+" Use alt + hjkl to resize windows
+nnoremap <M-j>    :resize -2<CR>
+nnoremap <M-k>    :resize +2<CR>
+nnoremap <M-h>    :vertical resize -2<CR>
+nnoremap <M-l>    :vertical resize +2<CR> 
 " Tab
 nnoremap <Tab> gt
-nnoremap <silent> <C-t> :tabnew<CR>
-
+nnoremap <silent> <A-t> :tabnew<CR>
 " Center screen after search
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
 " Shortcut split navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-" Alt + hjkl to rezise windows
-nnoremap <leader>j :resize -2<CR>
-nnoremap <leader>k :resize +2<CR>
-nnoremap <leader>h :vertical resize -2<CR>
-nnoremap <leader>l :vertical resize +2<CR>
-
 " Alias replace all to
 nnoremap <A-s> :%s//gI/<Left><Left><Left>
-
-" Map escape
-inoremap jk <Esc>
-inoremap kj <Esc>
-
-" Use control-c instead of escape
-nnoremap <C-c> <Esc>
-
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
-
-" Alias write and quit to Q
-nnoremap <leader>q :wq<CR>
-nnoremap <leader>w :w<CR>
-
-" Exit terminal mode
-tnoremap <Esc> <C-\><C-n>
-
 " Save file as sudo when no sudo permissions
-cmap w!! w !sudo tee > /dev/null %
-
-" Colorscheme for nord:
-colorscheme nord
-
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+" Goyo plugin makes text more readable
+map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+" Replace ex mode with gq
+map Q gq
 " Vimnerdtree from preservim settings:
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+" END OF SHORTCUTS 
+
+" Colorscheme for nord:
+colorscheme nord
+
+" Autostart NERDTree
+autocmd VimEnter * NERDTree
 
 " Vimwiki settings:
 let g:vimwiki_list = [{'path': '~/documents/vimwiki'}]
